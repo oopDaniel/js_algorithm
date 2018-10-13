@@ -1,6 +1,8 @@
 import fs from 'fs'
 import { clock, printTime } from './utils'
 import Graph from './graph'
+// import DFS from './solve'
+import DFS from './solve2'
 
 const now = clock()
 
@@ -21,4 +23,7 @@ for (let i = 0; i < e; i++) {
 
 printTime(clock(now))
 
-console.log('Result: ', g)
+const dfs = new DFS(g, 0)
+
+const path = dfs.pathTo(3)
+console.log(path.join(' -> '))
