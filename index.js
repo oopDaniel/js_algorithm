@@ -1,15 +1,24 @@
 import fs from 'fs'
 import { clock, printTime } from './utils'
-import solve from './solve'
+import Graph from './graph'
 
 const now = clock()
 
 const FILE_NAME_IN = 'input.txt'
 const file = fs.readFileSync(`./${FILE_NAME_IN}`, 'utf8')
-const arr = file.split(', ').map(c => +c)
+const lines = file.split('\n')
 
-solve(arr)
+const v = +lines[0]
+const e = +lines[1]
+const g = new Graph(v)
+
+for (let i = 0; i < e; i++) {
+  let [a, b] = lines[i + 2].split(' ')
+  a = +a
+  b = +b
+  g.addEdge(a, b)
+}
 
 printTime(clock(now))
 
-console.log('Result: ', arr)
+console.log('Result: ', g)
