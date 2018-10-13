@@ -1,6 +1,7 @@
 import fs from 'fs'
 import { clock, printTime } from './utils'
 import Graph from './graph'
+import BFS from './solve'
 
 const now = clock()
 
@@ -19,6 +20,8 @@ for (let i = 0; i < e; i++) {
   g.addEdge(a, b)
 }
 
+const bfs = new BFS(g, 0)
+
 printTime(clock(now))
 
-console.log('Result: ', g)
+console.log(bfs.pathTo(4).join(' -> '))

@@ -1,18 +1,18 @@
 export default class Graph {
   constructor (v) {
     this.v = v
-    this.adj = []
+    this._adj = []
     for (let i = 0; i < v; i++) {
-      this.adj.push([])
+      this._adj.push([])
     }
   }
 
   addEdge (v, w) {
-    this.adj[v].push(w)
-    this.adj[w].push(v)
+    this._adj[v].push(w)
+    this._adj[w].push(v)
   }
 
   adj (v) {
-    return this.adj[v]
+    return this._adj[v]
   }
 }
