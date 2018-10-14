@@ -1,8 +1,7 @@
 import fs from 'fs'
 import { clock, printTime } from './utils'
 import Graph from './graph'
-
-const now = clock()
+import Edge from './edge'
 
 const FILE_NAME_IN = 'input.txt'
 const file = fs.readFileSync(`./${FILE_NAME_IN}`, 'utf8')
@@ -13,12 +12,12 @@ const e = +lines[1]
 const g = new Graph(v)
 
 for (let i = 0; i < e; i++) {
-  let [a, b] = lines[i + 2].split(' ')
-  a = +a
-  b = +b
-  g.addEdge(a, b)
+  const parsed = lines[i + 2].split(' ')
+  const numbers = parsed.map(x => +x)
+  const edge = new Edge(...numbers)
+  g.addEdge(edge)
 }
 
-printTime(clock(now))
+const now = clock()
 
-console.log('Result: ', g)
+printTime(clock(now))
