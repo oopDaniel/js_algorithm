@@ -5,12 +5,12 @@ export default class Edge {
     this._weight = weight
   }
 
-  either () {
+  from () {
     return this.v
   }
 
-  other (v) {
-    return v === this.v ? this.w : this.v
+  to () {
+    return this.w
   }
 
   weight () {
@@ -18,6 +18,6 @@ export default class Edge {
   }
 
   toString () {
-    return `${this.v}-${this.w}: ${this._weight}`
+    return `${this.v}->${this.w}: ${this._weight}`
   }
 }

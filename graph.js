@@ -1,4 +1,4 @@
-export default class EdgeWeightedGraph {
+export default class EdgeWeightedDigraph {
   constructor (v) {
     this.v = v
     this._adj = []
@@ -9,10 +9,8 @@ export default class EdgeWeightedGraph {
   }
 
   addEdge (edge) {
-    const v = edge.either()
-    const w = edge.other(v)
+    const v = edge.from()
     this._adj[v].push(edge)
-    this._adj[w].push(edge)
     this._edges.push(edge)
   }
 
