@@ -2,6 +2,7 @@ import fs from 'fs'
 import { clock, printTime } from './utils'
 import Graph from './graph'
 import Edge from './edge'
+import MST from './solve'
 
 const FILE_NAME_IN = 'input.txt'
 const file = fs.readFileSync(`./${FILE_NAME_IN}`, 'utf8')
@@ -19,5 +20,12 @@ for (let i = 0; i < e; i++) {
 }
 
 const now = clock()
+
+const mst = new MST(g)
+
+for (let e of mst.edges()) {
+  console.log(e + '\n')
+}
+console.log(`Total weight: ${mst.weight()}`)
 
 printTime(clock(now))
