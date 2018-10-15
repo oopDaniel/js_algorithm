@@ -1,3 +1,8 @@
-# Node Babel Starter
+# Algorithm Practice
 
-A really simple starter that allows you to use the latest ES6+ syntax.
+Practice the following in its individual branch:
+
+- Sorting (quickSort, mergeSort, and heapSort)
+- Search Tree (RedBlackBST)
+- Graph traversal (DFS, BFS)
+- Graph (MST, shortest path)
