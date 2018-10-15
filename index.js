@@ -2,6 +2,7 @@ import fs from 'fs'
 import { clock, printTime } from './utils'
 import Graph from './graph'
 import Edge from './edge'
+import SP from './solve'
 
 const FILE_NAME_IN = 'input.txt'
 const file = fs.readFileSync(`./${FILE_NAME_IN}`, 'utf8')
@@ -19,5 +20,11 @@ for (let i = 0; i < e; i++) {
 }
 
 const now = clock()
+
+const sp = new SP(g, 0)
+
+const node = 3
+console.log(sp.pathTo(node))
+console.log(sp.distTo(node))
 
 printTime(clock(now))
