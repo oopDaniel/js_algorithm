@@ -4,7 +4,7 @@ import Graph from './graph'
 import Edge from './edge'
 import SP from './solve'
 
-const FILE_NAME_IN = 'input.txt'
+const FILE_NAME_IN = 'input2.txt'
 const file = fs.readFileSync(`./${FILE_NAME_IN}`, 'utf8')
 const lines = file.split('\n')
 
@@ -23,7 +23,7 @@ const now = clock()
 
 const sp = new SP(g, 0)
 
-const node = 3
+const node = 5
 console.log(sp.pathTo(node))
 console.log(sp.distTo(node))
 
