@@ -2,7 +2,7 @@ import fs from 'fs'
 import { clock, printTime } from './utils'
 import Graph from './graph'
 import Edge from './edge'
-import MST from './solve'
+import MST from './solve2'
 
 const FILE_NAME_IN = 'input.txt'
 const file = fs.readFileSync(`./${FILE_NAME_IN}`, 'utf8')

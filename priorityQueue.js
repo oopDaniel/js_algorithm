@@ -32,18 +32,17 @@ export default class MinPriorityQueue {
   sink (node, n) {
     const size = this.heap.length - 1
     let child = n * 2
-    if (child < size) {
+    if (child <= size) {
       const vp = this.valueAccessor(node)
-      const va = this.valueAccessor(this.heap[child])
-      let min = va
-      if (child + 1 < size) {
-        const vb = this.valueAccessor(this.heap[child + 1])
-        if (vb < va) {
+      let vc = this.valueAccessor(this.heap[child])
+      if (child + 1 <= size) {
+        const tmp = this.valueAccessor(this.heap[child + 1])
+        if (tmp < vc) {
           child++
-          min = vb
+          vc = tmp
         }
       }
-      if (min < vp) {
+      if (vc < vp) {
         this.swap(n, child)
         this.sink(this.heap[child], child)
       }
